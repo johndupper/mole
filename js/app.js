@@ -1,20 +1,16 @@
-var $;
 let controller = {
-    buildGameBoard: function() {
-        'use strict';
-        for (let i = 1; i <= game.board.length; i += 1) {
-            let $div = $('<div>');
-            $div.attr('id', i);
-            $div.addClass('moleHole');
-            $('#game').append($div);
-        }
+
+    board: null,
+
+    onPlayButtonPressed: function() {
+        console.log('play button pressed.');
+        console.log('pre-click: ' + game.currentPoints);
+        game.addPoint();
+        console.log('click: ' + game.currentPoints);
     },
+    
+    animateGame: function(mole) {
+        $('#' + mole).addClass('animate');
+        
+    }
 };
-
-
-
-
-// end
-$(function() {
-    controller.buildGameBoard();
-});
