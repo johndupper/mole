@@ -1,6 +1,26 @@
-.moleHole {
-    width: 20vw;
-    height: 15vh;
-    background-color: black;
+#container {
+    min-height: 100vh;
+    position: relative;
+    border: 5px solid teal;
+}
+
+#header {
+    border: 3px solid red;
+}
+
+#gameBoard {
+    height: 50vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    border: 3px solid blue;
+}
+
+.hole {
+    height: 10vh;
+    width: 25vw;
     border-radius: 50%;
+    justify-content: space-around;
+    border: 1px solid black;
 }
