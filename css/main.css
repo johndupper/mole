@@ -24,3 +24,7 @@
     justify-content: space-around;
     border: 1px solid black;
 }
+
+.animate {
+    background-color: cadetblue;
+}

@@ -9,17 +9,19 @@
     
     <body>
         <div id="container">
+
             <div id="header">
                 <h1>Whac-A-Mole</h1>
                 <button onclick="controller.onPlayButtonPressed()" >Play Game</button>
                 <p>Current Score: </p>
             </div>
-            
+
             <div id="gameBoard">
-                <div class="hole" id="1"></div>
-                <div class="hole" id="2"></div>
-                <div class="hole" id="3"></div>
+                <div class="hole" id="1" onclick="controller.onMoleClick()"></div>
+                <div class="hole" id="2" onclick="controller.onMoleClick()"></div>
+                <div class="hole" id="3" onclick="controller.onMoleClick()"></div>
             </div>
+
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

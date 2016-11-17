@@ -3,14 +3,24 @@ let controller = {
     board: null,
 
     onPlayButtonPressed: function() {
-        console.log('play button pressed.');
-        console.log('pre-click: ' + game.currentPoints);
-        game.addPoint();
-        console.log('click: ' + game.currentPoints);
+        setInterval(function() {
+            controller.animateGame(game.generateRandomMole());
+        }, 500);
+    },
+
+    animateGame: function(mole) {
+        console.log('animate game: id#' + mole);
+        $('.hole').removeClass('animate');
+        $('#' + mole).addClass('animate');  
     },
     
-    animateGame: function(mole) {
-        $('#' + mole).addClass('animate');
-        
+    onMoleClick: function() {
+    // how do i reference 'this' html element?        
+        // if clicked mole has class 'animate'
+            // controller.scorePoint();
+    },
+    
+    scorePoint: function() {
+        game.addPoint();
     }
 };

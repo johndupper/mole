@@ -1,5 +1,4 @@
 let game = {
-    
 
     board: [1, 2, 3],
     numberOfMoles: 3,
@@ -17,3 +16,10 @@ let game = {
     startGameTimer: function() {},
     endGameTimer: function() {}
 };
+
+
+
+
+/*
+:: don't allow multiple of the same random number    
+*/
