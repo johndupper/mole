@@ -13,13 +13,11 @@ let controller = {
         $('.hole').removeClass('animate');
         $('#' + mole).addClass('animate');  
     },
-    
+
     onMoleClick: function() {
-    // how do i reference 'this' html element?        
-        // if clicked mole has class 'animate'
-            // controller.scorePoint();
+        console.log('works');
     },
-    
+
     scorePoint: function() {
         game.addPoint();
     }
