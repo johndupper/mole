@@ -18,9 +18,6 @@ let game = {
 };
 
 
-
-
 /*
-:: don't allow multiple of the same random number
 :: allow only one point per animated mole
 */
