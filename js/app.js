@@ -1,24 +1,31 @@
 let controller = {
-
-    board: null,
-
+    
+    timeRemaining: 20,
+    endOfGame: false,
+    
     onPlayButtonPressed: function() {
         setInterval(function() {
             controller.animateGame(game.generateRandomMole());
-        }, 500);
+        }, 400);
+    },
+    
+    startTimer: function() {
+        console.log('startTimer');
     },
 
     animateGame: function(mole) {
-        console.log('animate game: id#' + mole);
         $('.hole').removeClass('animate');
-        $('#' + mole).addClass('animate');  
+        $('#' + mole).addClass('animate');
     },
 
     onMoleClick: function() {
-        console.log('works');
+        if (event.target.classList.contains('animate')) {
+            game.addPoint();
+            console.log(game.currentPoints);
+        }
     },
-
-    scorePoint: function() {
-        game.addPoint();
-    }
+    
+    endTimer: function() {}
 };
+
+controller.startTimer();
