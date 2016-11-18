@@ -1,25 +1,26 @@
 let game = {
 
-    board: [1, 2, 3],
-    numberOfMoles: 3,
     currentPoints: 0,
-    
+    lastMole: 1,
 
     generateRandomMole: function() {
-        return (Math.floor(Math.random() * 3) + 1);
+        var randomNumber = Math.floor(Math.random() * 3) + 1;
+        if (randomNumber === this.lastMole) {
+            game.generateRandomMole();
+        }
+        this.lastMole = randomNumber;
+        return randomNumber;
     },
 
     addPoint: function() {
         this.currentPoints += 1;
-    },
-
-    startGameTimer: function() {},
-    endGameTimer: function() {}
+    }
 };
 
 
 
 
 /*
-:: don't allow multiple of the same random number    
+:: don't allow multiple of the same random number
+:: allow only one point per animated mole
 */
