@@ -8,6 +8,9 @@
     border: 3px solid red;
 }
 
+#userScore {}
+#userTime {}
+
 #gameBoard {
     height: 50vh;
     width: 100vw;
