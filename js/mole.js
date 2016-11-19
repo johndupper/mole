@@ -13,7 +13,7 @@ let game = {
     },
 
     addPoint: function() {
-        this.currentPoints += 1;
+        game.currentPoints += 1;
     }
 };
 
