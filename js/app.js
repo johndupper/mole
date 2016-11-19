@@ -1,9 +1,10 @@
 let controller = {
-    
+
+    userClick: null,
     timeRemaining: 5,
     timeInterval: null,
     endOfGame: false,
-    
+
     // start game
     onPlayButtonPressed: function() {
         setInterval(function() {
@@ -11,7 +12,14 @@ let controller = {
         }, 400);
         this.startTimer();
     },
-    
+
+        // start timer
+    startTimer: function() {
+        controller.timeInterval = setInterval(function() {
+            controller.timer();
+        }, 1000);
+    },
+
     // timer logic
     timer: function() {
         controller.timeRemaining -= 1;
@@ -19,14 +27,8 @@ let controller = {
             clearInterval(controller.timeInterval);
             return;
         }
+        
         $('#userTime').text(controller.timeRemaining);
-    },
-    
-    // start timer
-    startTimer: function() {
-        controller.timeInterval = setInterval(function() {
-            controller.timer();
-        }, 1000);
     },
 
     // show or hide moles
@@ -37,8 +39,22 @@ let controller = {
 
     // score point
     onMoleClick: function() {
+
+        var thisClick = event.timeStamp, lastClick;
+
+        
         if (event.target.classList.contains('animate')) {
-            console.log(event.timeStamp);
+            // if the click is too close to the last click
+            // if event is too close to last one, don't add a point
+                // time stamp approach
+            
+            var $test = event.tyoe;
+            console.log('EVENT TEST: ' + $test);
+
+
+            console.log(event);
+            console.log('time stamp: ' + event.timeStamp);
+            
             game.addPoint();
             console.log(game.currentPoints);
         }
