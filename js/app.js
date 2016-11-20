@@ -1,6 +1,6 @@
 let controller = {
 
-    lastClick: 0,
+    lastClickTime: 0,
     timeRemaining: 5,
     timeInterval: null,
     endOfGame: false,
@@ -13,7 +13,7 @@ let controller = {
         controller.startTimer();
     },
 
-        // start timer
+    // start timer
     startTimer: function() {
         controller.timeInterval = setInterval(function() {
             controller.timer();
@@ -41,11 +41,17 @@ let controller = {
     // score point
     onMoleClick: function() {
         if (event.target.classList.contains('animate')) {
-            let thisClick = event;
-            console.log('this: ' + thisClick.type, thisClick.timeStamp);
-            console.log('last: ' + controller.lastClick.type, controller.lastClick.timeStamp);
-            thisClick = 0;
-            controller.lastClick = event;
+            let secondClickTime = event.timeStamp;
+            let timeDiff = secondClickTime - controller.lastClickTime;
+            
+            if (timeDiff < 400) {
+                console.log('blocked point: ' + timeDiff + 'ms between');
+            } else {
+                game.addPoint();
+                console.log('score: ' + game.currentPoints);
+            }
+            secondClickTime = 0;
+            controller.lastClickTime = event.timeStamp;
         }
     },
 
@@ -56,5 +62,7 @@ let controller = {
 
 /*
     :: only one point per click
+        :: refactor this please
+
     :: make reset function (game too)
 */
