@@ -14,7 +14,11 @@ let game = {
 
     addPoint: function() {
         game.currentPoints += 1;
-    }
+    },
+    
+    resetGame: function() {
+        game.currentPoints = 0;
+}
 };
 
 
