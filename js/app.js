@@ -1,6 +1,6 @@
 let controller = {
 
-    userClick: null,
+    lastClick: 0,
     timeRemaining: 5,
     timeInterval: null,
     endOfGame: false,
@@ -10,7 +10,7 @@ let controller = {
         setInterval(function() {
             controller.animateGame(game.generateRandomMole());
         }, 400);
-        this.startTimer();
+        controller.startTimer();
     },
 
         // start timer
@@ -25,9 +25,10 @@ let controller = {
         controller.timeRemaining -= 1;
         if (controller.timeRemaining < 1) {
             clearInterval(controller.timeInterval);
+            controller.reset();
             return;
         }
-        
+
         $('#userTime').text(controller.timeRemaining);
     },
 
@@ -39,30 +40,21 @@ let controller = {
 
     // score point
     onMoleClick: function() {
-
-        var thisClick = event.timeStamp, lastClick;
-
-        
         if (event.target.classList.contains('animate')) {
-            // if the click is too close to the last click
-            // if event is too close to last one, don't add a point
-                // time stamp approach
-            
-            var $test = event.tyoe;
-            console.log('EVENT TEST: ' + $test);
-
-
-            console.log(event);
-            console.log('time stamp: ' + event.timeStamp);
-            
-            game.addPoint();
-            console.log(game.currentPoints);
+            let thisClick = event;
+            console.log('this: ' + thisClick.type, thisClick.timeStamp);
+            console.log('last: ' + controller.lastClick.type, controller.lastClick.timeStamp);
+            thisClick = 0;
+            controller.lastClick = event;
         }
     },
 
-    endTimer: function() {}
+    endTimer: function() {},
+    
+    reset: function() {}
 };
 
 /*
     :: only one point per click
+    :: make reset function (game too)
 */
