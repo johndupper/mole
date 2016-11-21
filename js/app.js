@@ -9,7 +9,7 @@ let controller = {
     onPlayButtonPressed: function() {
         setInterval(function() {
             controller.animateGame(game.generateRandomMole());
-        }, 400);
+        }, 400); // interval to stop animation
         controller.startTimer();
     },
 
@@ -24,11 +24,12 @@ let controller = {
     timer: function() {
         controller.timeRemaining -= 1;
         if (controller.timeRemaining < 1) {
+            // stop animating
+            $('#userTime').text('Game over!');
             clearInterval(controller.timeInterval);
-            controller.reset();
+            controller.reset(); // function called to reset game
             return;
         }
-
         $('#userTime').text(controller.timeRemaining);
     },
 
@@ -61,8 +62,6 @@ let controller = {
 };
 
 /*
-    :: only one point per click
-        :: refactor this please
-
+    :: refactor onMoleClick()
     :: make reset function (game too)
 */
