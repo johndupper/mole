@@ -14,7 +14,7 @@ body {
   border: 3px solid red; }
 
 #gameBoard {
-  height: 50vh;
+  height: 40vh;
   width: 100vw;
   position: fixed;
   bottom: 0;
@@ -23,11 +23,23 @@ body {
 
 .hole {
   position: relative;
-  width: 200px;
+  width: 8rem;
   height: 90px;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 10px 30px rgba(0, 0, 0, 0.6); }
+  .hole:nth-child(1) {
+    transform: translate(40%, -130%); }
+  .hole:nth-child(2) {
+    transform: translate(0%, 40%); }
+  .hole:nth-child(3) {
+    transform: translate(20%, -40%); }
+  .hole:nth-child(4) {
+    transform: translate(20%, 90%); }
+  .hole:nth-child(5) {
+    transform: translate(30%, -40%); }
+  .hole:nth-child(6) {
+    transform: translate(10%, 10%); }
 
 .mole-box {
   position: absolute;
@@ -44,8 +56,8 @@ body {
   width: 70%;
   height: 200px;
   border-radius: 1rem;
-  background: url(../img/mole.png) center, rgba(0, 0, 0, 0.2);
+  background: url(../img/mole.png) center;
   background-size: cover;
-  animation: mole-demo 1800ms ease-in-out infinite; }
+  animation: animate 700ms ease-in-out infinite; }
 
 /*# sourceMappingURL=main.css.map */
