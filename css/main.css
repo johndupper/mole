@@ -1,41 +1,51 @@
 body {
-    background-image: url(../img/background-lawn.png);
-    background-size: cover;
-    background-position: top;
-}
+  background-image: url(../img/background-lawn.png);
+  background-size: cover;
+  background-position: top; }
 
 /*
 
 */
 #container {
-    min-height: 100vh;
-    position: relative;
-}
+  min-height: 100vh;
+  position: relative; }
 
 #header {
-    border: 3px solid red;
-}
-
-#userScore {}
-#userTime {}
+  border: 3px solid red; }
 
 #gameBoard {
-    height: 50vh;
-    width: 100vw;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    border: 3px solid blue;
-}
+  height: 50vh;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap; }
 
 .hole {
-    height: 10vh;
-    width: 15vw;
-    border-radius: 50%;
-    justify-content: space-around;
-    border: 1px solid black;
-}
+  position: relative;
+  width: 200px;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 10px 30px rgba(0, 0, 0, 0.6); }
 
-.animate {
-    background-color: cadetblue;
-}
+.mole-box {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  border-radius: 0 0 50% 50% / 15%; }
+
+.mole {
+  position: absolute;
+  left: 15%;
+  bottom: 0;
+  width: 70%;
+  height: 200px;
+  border-radius: 1rem;
+  background: url(../img/mole.png) center, rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  animation: mole-demo 1800ms ease-in-out infinite; }
+
+/*# sourceMappingURL=main.css.map */
