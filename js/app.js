@@ -3,18 +3,42 @@ let controller = {
     lastClickTime: 0,
     timeRemaining: 5,
     timeInterval: null,
-    endOfGame: false,
+    gamePlay: null,
+    gameInProgress: false,
 
     // start game
     onPlayButtonPressed: function() {
-        setInterval(function() {
-            controller.animateGame(game.generateRandomMole());
-        }, 400); // interval to stop animation
-        controller.startTimer();
+        
+        // should we start a new game?
+        if (controller.gameInProgress) {
+            
+            // don't start game
+            console.log('play - gameInProgress: ' + controller.gameInProgress);
+            
+        } else {
+            
+            console.log('--- starting new game ---');
+            
+            // gameInProgress = true
+            controller.gameInProgress = true;
+            console.log('play - gameInProgress: ' + controller.gameInProgress);
+            
+            // start a game
+            controller.gamePlay = setInterval(function() {
+                controller.animateGame(game.generateRandomMole());
+            }, 400);
+            
+            $('#userTime').text('Time Remaining: ');
+            $('#playBtn').text('Play Game');
+            
+            // start timer
+            controller.startTimer();
+        }
     },
 
     // start timer
     startTimer: function() {
+        // call timer function, start countdown
         controller.timeInterval = setInterval(function() {
             controller.timer();
         }, 1000);
@@ -22,12 +46,27 @@ let controller = {
 
     // timer logic
     timer: function() {
+        
+        // subtract a second
         controller.timeRemaining -= 1;
+        
+        // if time is up
         if (controller.timeRemaining < 1) {
-            // stop animating
-            $('#userTime').text('Game over!');
+            
+            // gameInProgress = false
+            controller.gameInProgress = false;
+            console.log('time up - gameInProgress: ' + controller.gameInProgress);
+            
+            // stop game & timer
+            clearInterval(controller.gamePlay);
             clearInterval(controller.timeInterval);
-            controller.reset(); // function called to reset game
+            
+            // reset game
+            $('#userTime').text('Game over!');
+            $('#playBtn').text('Play Again?');
+            
+            // call reset game
+            controller.reset();
             return;
         }
         $('#userTime').text(controller.timeRemaining);
@@ -49,19 +88,39 @@ let controller = {
                 console.log('blocked point: ' + timeDiff + 'ms between');
             } else {
                 game.addPoint();
+                $('#userScore').text(game.currentPoints);
                 console.log('score: ' + game.currentPoints);
             }
+            
             secondClickTime = 0;
             controller.lastClickTime = event.timeStamp;
         }
     },
-
-    endTimer: function() {},
     
-    reset: function() {}
+    reset: function() {
+        
+        // reset game
+        game.resetGame();
+        
+        // reset controller
+        controller.lastClickTime = 0;
+        controller.timeRemaining = 5;
+        controller.timeInterval = null;
+        controller.gamePlay = null;
+        controller.gameInProgress = false;
+        
+        // hide last mole showing when game ends
+        $('.hole').removeClass('animate');
+        
+        // change UI for end of game
+        $('#userTime').text('Game over!');
+        $('#playBtn').text('Play Again?');
+        $('#userScore').text('');
+    }
 };
 
 /*
+    :: don't allow button to create many games
     :: refactor onMoleClick()
     :: make reset function (game too)
 */
