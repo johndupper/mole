@@ -119,4 +119,5 @@ let controller = {
     :: don't allow button to create many games
     :: refactor onMoleClick()
     :: make reset function (game too)
+    :: show high score on game over
 */

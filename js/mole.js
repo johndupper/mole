@@ -4,7 +4,7 @@ let game = {
     lastMole: 1,
 
     generateRandomMole: function() {
-        var randomNumber = Math.floor(Math.random() * 3) + 1;
+        var randomNumber = Math.floor(Math.random() * 6) + 1;
         if (randomNumber === this.lastMole) {
             game.generateRandomMole();
         }
