@@ -1,0 +1,80 @@
+body {
+    background-image: url(../img/background-lawn.png);
+    background-size: cover;
+    background-position: top;
+}
+
+/*
+
+*/
+#container {
+    min-height: 100vh;
+    position: relative;
+}
+
+#header {
+    border: 3px solid red;
+}
+
+#userScore {}
+#userTime {}
+
+#gameBoard {
+    height: 50vh;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.hole {
+  position: relative;
+  width: 200px;
+  height: 90px;
+  background: rgba(black, 0.8);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 10px 0 rgba(black, 0.2),
+    inset 0 10px 30px rgba(black, 0.6);
+}
+
+.mole-box {
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  border-radius: 0 0 50% 50% / 15%;
+}
+
+.mole {
+  position: absolute;
+  left: 15%;
+  // Animate the bottom property for mole movement
+  bottom: 0;
+  width: 70%;
+  height: 200px;
+  border-radius: 1rem;
+  background: 
+    url(../img/mole.png) center, 
+    rgba(black, 0.2);
+  background-size: cover;
+  animation: mole-demo 1800ms ease-in-out infinite;
+}
+
+//@keyframes mole-demo {
+//  0% {
+//    bottom: 0; 
+//  }
+//  20% {
+//    bottom: 0; 
+//  }
+//  70% {
+//    bottom: -400px; 
+//  }
+//  100% {
+//    bottom: 0;
+//  }
+//}
