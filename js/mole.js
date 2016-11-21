@@ -18,10 +18,6 @@ let game = {
     
     resetGame: function() {
         game.currentPoints = 0;
-}
+        game.lastMole = 1;
+    }
 };
-
-
-/*
-:: allow only one point per animated mole
-*/
