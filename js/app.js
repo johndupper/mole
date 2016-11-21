@@ -28,8 +28,9 @@ let controller = {
                 controller.animateGame(game.generateRandomMole());
             }, 400);
             
-            $('#userTime').text('Time Remaining: ');
+            $('#userScore').text('0');
             $('#playBtn').text('Play Game');
+            $('#userTime').text(controller.timeRemaining);
             
             // start timer
             controller.startTimer();
@@ -61,10 +62,6 @@ let controller = {
             clearInterval(controller.gamePlay);
             clearInterval(controller.timeInterval);
             
-            // reset game
-            $('#userTime').text('Game over!');
-            $('#playBtn').text('Play Again?');
-            
             // call reset game
             controller.reset();
             return;
@@ -85,7 +82,7 @@ let controller = {
             let timeDiff = secondClickTime - controller.lastClickTime;
             
             if (timeDiff < 400) {
-                console.log('blocked point: ' + timeDiff + 'ms between');
+                console.log('blocked point');
             } else {
                 game.addPoint();
                 $('#userScore').text(game.currentPoints);
@@ -115,7 +112,6 @@ let controller = {
         // change UI for end of game
         $('#userTime').text('Game over!');
         $('#playBtn').text('Play Again?');
-        $('#userScore').text('');
     }
 };
 
