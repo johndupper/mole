@@ -14,23 +14,21 @@ body {
   position: relative; }
 
 #header {
-  height: 20vh;
   text-align: center;
   border: 2px solid black; }
 
 h1 {
-  font-size: 5rem;
-  border: 1px solid black; }
+  margin: 3rem 0 0 0;
+  font-size: 5rem; }
 
 #playBtn {
-  height: 30%;
-  width: 20%;
-  cursor: pointer;
-  background: tomato;
-  border: 3px solid red; }
+  display: block;
+  margin: 2rem auto;
+  height: 60px;
+  width: 150px; }
 
 p {
-  font-size: 2.5rem; }
+  font-size: 3rem; }
 
 #header-time {
   position: absolute;
@@ -44,7 +42,8 @@ p {
 
 span {
   display: block;
-  font-size: 3rem; }
+  font-size: 8rem;
+  border: 1px solid black; }
 
 #gameBoard {
   height: 40vh;
@@ -112,7 +111,7 @@ span {
     bottom: 0px; }
   100% {
     bottom: -400px; } }
-@media (max-width: 900px) {
+@media (min-width: 600px) {
   h1 {
     font-size: 4rem; }
 

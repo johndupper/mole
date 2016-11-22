@@ -8,17 +8,10 @@ let controller = {
 
     // start game
     onPlayButtonPressed: function() {
-        
-        // should we start a new game?
         if (controller.gameInProgress) {
-            
-            // don't start game
             console.log('play - gameInProgress: ' + controller.gameInProgress);
-            
         } else {
-            
             console.log('--- starting new game ---');
-            
             // gameInProgress = true
             controller.gameInProgress = true;
             console.log('play - gameInProgress: ' + controller.gameInProgress);
