@@ -1,3 +1,6 @@
+* {
+  font-family: 'Schoolbell', cursive; }
+
 body {
   background-image: url(../img/background-lawn.png);
   background-size: cover;
@@ -11,7 +14,37 @@ body {
   position: relative; }
 
 #header {
+  height: 20vh;
+  text-align: center;
+  border: 2px solid black; }
+
+h1 {
+  font-size: 5rem;
+  border: 1px solid black; }
+
+#playBtn {
+  height: 30%;
+  width: 20%;
+  cursor: pointer;
+  background: tomato;
   border: 3px solid red; }
+
+p {
+  font-size: 2.5rem; }
+
+#header-time {
+  position: absolute;
+  top: 20%;
+  left: 10%; }
+
+#header-score {
+  position: absolute;
+  top: 20%;
+  right: 10%; }
+
+span {
+  display: block;
+  font-size: 3rem; }
 
 #gameBoard {
   height: 40vh;
@@ -28,6 +61,24 @@ body {
   background: rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 10px 30px rgba(0, 0, 0, 0.6); }
+
+.hole:nth-child(1) {
+  transform: translate(35px, -50px); }
+
+.hole:nth-child(2) {
+  transform: translate(20px, 40px); }
+
+.hole:nth-child(3) {
+  transform: translate(35px, -50px); }
+
+.hole:nth-child(4) {
+  transform: translate(20px, 50px); }
+
+.hole:nth-child(5) {
+  transform: translate(40px, 0px); }
+
+.hole:nth-child(6) {
+  transform: translate(70px, 30px); }
 
 .mole-box {
   position: absolute;
@@ -52,10 +103,6 @@ body {
   transition: all 200ms ease;
   animation: move 1200ms ease-in-out infinite; }
 
-.hit {
-  transition: bottom 200ms ease;
-  animation: hit 300ms ease-in-out forwards; }
-
 @keyframes move {
   0% {
     bottom: -400px; }
@@ -65,10 +112,42 @@ body {
     bottom: 0px; }
   100% {
     bottom: -400px; } }
-@keyframes hit {
-  0% {
-    bottom: 0; }
-  100% {
-    bottom: -400px; } }
+@media (max-width: 900px) {
+  h1 {
+    font-size: 4rem; }
+
+  #playBtn {
+    cursor: pointer;
+    background: tomato;
+    padding: 1.5rem;
+    border: 3px solid black; }
+
+  #header-time {
+    left: 5%; }
+
+  p {
+    font-size: 1.5rem; }
+
+  span {
+    display: block;
+    font-size: 3rem; }
+
+  .hole:nth-child(1) {
+    transform: translate(35px, -50px); }
+
+  .hole:nth-child(2) {
+    transform: translate(20px, 40px); }
+
+  .hole:nth-child(3) {
+    transform: translate(35px, -50px); }
+
+  .hole:nth-child(4) {
+    transform: translate(20px, 50px); }
+
+  .hole:nth-child(5) {
+    transform: translate(40px, 0px); }
+
+  .hole:nth-child(6) {
+    transform: translate(70px, 30px); } }
 
 /*# sourceMappingURL=main.css.map */

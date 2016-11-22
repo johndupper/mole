@@ -1,7 +1,7 @@
 let controller = {
 
     lastClickTime: 0,
-    timeRemaining: 50,
+    timeRemaining: 15,
     timeInterval: null,
     gamePlay: null,
     gameInProgress: false,
@@ -102,10 +102,12 @@ let controller = {
         
         // reset controller
         controller.lastClickTime = 0;
-        controller.timeRemaining = 5;
+        controller.timeRemaining = 15;
         controller.timeInterval = null;
         controller.gamePlay = null;
         controller.gameInProgress = false;
+        
+        $('.mole').removeClass('move');
         
         // change UI for end of game
         $('#userTime').text('Game over!');

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>whac-a-mole</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Schoolbell" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
     </head>
     
@@ -13,8 +14,8 @@
             <div id="header">
                 <h1>Whac-A-Mole</h1>
                 <button id='playBtn' onclick="controller.onPlayButtonPressed()" >Play Game</button>
-                <p>Time Remaining: <span id="userTime"></span></p>
-                <p>Current Score: <span id="userScore"></span></p>
+                <p id="header-time">Time Remaining: <span id="userTime"></span></p>
+                <p id="header-score">Current Score: <span id="userScore"></span></p>
             </div>
 
             <div id="gameBoard">
