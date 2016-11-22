@@ -20,3 +20,8 @@ is an arcade game in which players use a mallet to hit toy moles, which appear a
 
 ## Mid-MVC Wireframing... 
 [model... controller... both?](http://imgur.com/a/6LN6e)
+
+## This project was made with the help of:
+  * [normalize.css](https://necolas.github.io/normalize.css/)
+  * [jQuery](https://jquery.com/)
+  * [animate.css](https://daneden.github.io/animate.css/)
