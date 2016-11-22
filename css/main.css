@@ -6,29 +6,25 @@ body {
   background-size: cover;
   background-position: top; }
 
-/*
-
-*/
 #container {
   min-height: 100vh;
   position: relative; }
 
 #header {
-  text-align: center;
-  border: 2px solid black; }
+  text-align: center; }
 
 h1 {
   margin: 3rem 0 0 0;
   font-size: 5rem; }
 
-#playBtn {
-  display: block;
-  margin: 2rem auto;
-  height: 60px;
-  width: 150px; }
-
 p {
-  font-size: 3rem; }
+  font-size: 1.75rem; }
+
+#playBtn {
+  cursor: pointer;
+  background: tomato;
+  padding: 1rem;
+  border: 3px dashed yellow; }
 
 #header-time {
   position: absolute;
@@ -42,8 +38,7 @@ p {
 
 span {
   display: block;
-  font-size: 8rem;
-  border: 1px solid black; }
+  font-size: 3rem; }
 
 #gameBoard {
   height: 40vh;
@@ -111,26 +106,16 @@ span {
     bottom: 0px; }
   100% {
     bottom: -400px; } }
-@media (min-width: 600px) {
+@media (max-width: 500px) {
   h1 {
-    font-size: 4rem; }
-
-  #playBtn {
-    cursor: pointer;
-    background: tomato;
-    padding: 1.5rem;
-    border: 3px solid black; }
-
-  #header-time {
-    left: 5%; }
+    font-size: 3.5rem; }
 
   p {
     font-size: 1.5rem; }
 
   span {
-    display: block;
-    font-size: 3rem; }
-
+    font-size: 2.75rem; } }
+@media (min-width: 600px) {
   .hole:nth-child(1) {
     transform: translate(35px, -50px); }
 

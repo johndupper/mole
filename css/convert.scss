@@ -1,15 +1,13 @@
 * {
     font-family: 'Schoolbell', cursive;
 }
+
 body {
     background-image: url(../img/background-lawn.png);
     background-size: cover;
     background-position: top;
 }
 
-/*
-
-*/
 #container {
     min-height: 100vh;
     position: relative;
@@ -17,7 +15,6 @@ body {
 
 #header {
     text-align: center;
-    border: 2px solid black;
 }
 
 h1 {
@@ -25,15 +22,15 @@ h1 {
     font-size: 5rem;
 }
 
-#playBtn {
-    display: block;
-    margin: 2rem auto;
-    height: 60px;
-    width: 150px;
+p {
+    font-size: 1.75rem;
 }
 
-p {
-    font-size: 3rem;
+#playBtn {
+    cursor: pointer;
+    background: tomato;
+    padding: 1rem;
+    border: 3px dashed yellow;
 }
 
 #header-time {
@@ -50,8 +47,7 @@ p {
 
 span {
     display: block;
-    font-size: 8rem;
-    border: 1px solid black;
+    font-size: 3rem;
 }
 
 #gameBoard {
@@ -63,20 +59,18 @@ span {
     flex-wrap: wrap;
 }
 
-
-
-
 .hole {
-  position: relative;
-  width: 160px;
-  height: 60px;
-  background: rgba(black, 0.8);
-  border-radius: 50%;
-  box-shadow:
+    position: relative;
+    width: 160px;
+    height: 60px;
+    background: rgba(black, 0.8);
+    border-radius: 50%;
+    box-shadow:
     inset 0 10px 0 rgba(black, 0.2),
     inset 0 10px 30px rgba(black, 0.6);
 }
 
+// small viewport arrangement
 .hole:nth-child(1) {
     transform: translate(35px, -50px);
 }
@@ -97,28 +91,27 @@ span {
 }
 
 .mole-box {
-  position: absolute;
-  bottom: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 300px;
-  border-radius: 0 0 50% 50% / 15%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+    border-radius: 0 0 50% 50% / 15%;
 }
 
 .mole {
-  position: absolute;
-  cursor: pointer;
-  left: -15%;
-  bottom: -400px;
-  width: 100%;
-  height: 200px;
-  border-radius: 1rem;
-    
+    position: absolute;
+    cursor: pointer;
+    left: -15%;
+    bottom: -400px;
+    width: 100%;
+    height: 200px;
+    border-radius: 1rem;
     background-image: url(../img/mole.png);
-  background-size: cover;
+    background-size: cover;
 }
 
-
+// animation (cred: @brendanp)
 .move {
     transition: all 200ms ease;
     animation: move 1200ms ease-in-out infinite;
@@ -140,26 +133,16 @@ span {
 }
 
 
+// * small viewport
+@media (max-width: 500px) {
+    h1 { font-size: 3.5rem; }
+    p { font-size: 1.5rem; }
+    span { font-size: 2.75rem; }
+}
+
+
+// alternate holes layout
 @media (min-width: 600px) {
-    h1 {
-        font-size: 4rem;
-    }
-    #playBtn {
-        cursor: pointer;
-        background: tomato;
-        padding: 1.5rem;
-        border: 3px solid black;
-    }
-    #header-time {
-        left: 5%;
-    }
-    p {
-        font-size: 1.5rem;
-    }
-    span {
-        display: block;
-        font-size: 3rem;
-    }    
     .hole:nth-child(1) {
         transform: translate(35px, -50px);
     }
