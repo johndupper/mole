@@ -1,3 +1,4 @@
+/* general */
 * {
     font-family: 'Schoolbell', cursive;
     color: #654321;
@@ -110,8 +111,6 @@ span {
     border-radius: 0 0 50% 50% / 15%;
 }
 
-// many thanks to @brendanMP
-
 .mole {
     position: absolute;
     cursor: pointer;
@@ -123,7 +122,6 @@ span {
     background-image: url(../img/mole.png);
     background-size: cover;
 }
-
 
 .move {
     transition: all 300ms ease;
@@ -145,7 +143,6 @@ span {
   }
 }
 
-
 // * small viewport
 @media (max-width: 500px) {
     h1 {
@@ -160,7 +157,6 @@ span {
         font-size: 2.75rem;
     }
 }
-
 
 // larger display holes layout
 @media (min-width: 600px) {
@@ -183,3 +179,4 @@ span {
         transform: translate(70px, 30px);
     }
 }
+// many thanks to @brendanMP for his help
