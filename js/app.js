@@ -10,6 +10,7 @@ let controller = {
 
         if (!controller.gameInProgress) {
             
+            $('#header-time').removeClass('animated swing infinite');
             controller.gameInProgress = true;
             controller.gamePlay = setInterval(function() {
                 controller.animateGame(game.generateRandomMole());
@@ -34,6 +35,7 @@ let controller = {
         
         if (controller.timeRemaining < 1) {    
             controller.gameInProgress = false;
+            $('#header-time').addClass('animated swing infinite');
             
             // stop game & timer
             clearInterval(controller.gamePlay);
@@ -75,6 +77,7 @@ let controller = {
         controller.timeInterval = null;
         controller.gamePlay = null;
         controller.gameInProgress = false;
+        
         
         $('.mole').removeClass('move');
         // change UI for end of game
