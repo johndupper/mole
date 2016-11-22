@@ -1,13 +1,10 @@
 # Whac-A-Mole
-What is Whac-A-Mole?
-a situation in which attempts to solve a problem are piecemeal or superficial, resulting only in temporary or minor improvement
-**or**
-an arcade game in which players use a mallet to hit toy moles, which appear at random, back into their holes
+is an arcade game in which players use a mallet to hit toy moles, which appear at random, back into their holes
 
 ## Objectives
   * Use HTML/CSS to build web application
   * Use JavaScript/jQuery to handle DOM manipulation
-  * Use Trello to keep track of project: https://trello.com/b/MiV5R9wD/whac-a-mole
+  * [Use Trello to keep track of project](https://trello.com/b/MiV5R9wD/whac-a-mole)
   * Publish source code to GitHub with README.md file
   * Deploy it!
   
