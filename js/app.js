@@ -1,7 +1,7 @@
 let controller = {
 
     lastClickTime: 0,
-    timeRemaining: 5,
+    timeRemaining: 50,
     timeInterval: null,
     gamePlay: null,
     gameInProgress: false,
@@ -26,7 +26,7 @@ let controller = {
             // start a game
             controller.gamePlay = setInterval(function() {
                 controller.animateGame(game.generateRandomMole());
-            }, 400);
+            }, 1000);
             
             $('#userScore').text('0');
             $('#playBtn').text('Play Game');
@@ -71,15 +71,16 @@ let controller = {
 
     // show or hide moles
     animateGame: function(mole) {
-        $('.hole').removeClass('animate');
-        $('#' + mole).addClass('animate');
+        $('.mole').removeClass('move');
+        $('#' + mole).addClass('move');
     },
 
     // score point
     onMoleClick: function() {
-        if (event.target.classList.contains('animate')) {
+        if (event.target.classList.contains('move')) {
             let secondClickTime = event.timeStamp;
             let timeDiff = secondClickTime - controller.lastClickTime;
+            
             
             if (timeDiff < 400) {
                 console.log('blocked point');
@@ -106,9 +107,6 @@ let controller = {
         controller.gamePlay = null;
         controller.gameInProgress = false;
         
-        // hide last mole showing when game ends
-        $('.hole').removeClass('animate');
-        
         // change UI for end of game
         $('#userTime').text('Game over!');
         $('#playBtn').text('Play Again?');
@@ -116,6 +114,14 @@ let controller = {
 };
 
 /*
+    right now point scoring is based on .hole div having animate as a class.
+    animation keyframe is tied to the mole itself
+    <hole> --> <mole-box> --> <mole>
+
+
+
+
+
     :: don't allow button to create many games
     :: refactor onMoleClick()
     :: make reset function (game too)

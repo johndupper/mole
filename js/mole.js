@@ -5,10 +5,10 @@ let game = {
 
     generateRandomMole: function() {
         var randomNumber = Math.floor(Math.random() * 6) + 1;
-        if (randomNumber === this.lastMole) {
+        if (randomNumber === game.lastMole) {
             game.generateRandomMole();
         }
-        this.lastMole = randomNumber;
+        game.lastMole = randomNumber;
         return randomNumber;
     },
 

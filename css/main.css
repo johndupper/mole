@@ -23,23 +23,11 @@ body {
 
 .hole {
   position: relative;
-  width: 8rem;
-  height: 90px;
+  width: 160px;
+  height: 60px;
   background: rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   box-shadow: inset 0 10px 0 rgba(0, 0, 0, 0.2), inset 0 10px 30px rgba(0, 0, 0, 0.6); }
-  .hole:nth-child(1) {
-    transform: translate(40%, -130%); }
-  .hole:nth-child(2) {
-    transform: translate(0%, 40%); }
-  .hole:nth-child(3) {
-    transform: translate(20%, -40%); }
-  .hole:nth-child(4) {
-    transform: translate(20%, 90%); }
-  .hole:nth-child(5) {
-    transform: translate(30%, -40%); }
-  .hole:nth-child(6) {
-    transform: translate(10%, 10%); }
 
 .mole-box {
   position: absolute;
@@ -51,13 +39,36 @@ body {
 
 .mole {
   position: absolute;
-  left: 15%;
-  bottom: 0;
-  width: 70%;
+  cursor: pointer;
+  left: -15%;
+  bottom: -400px;
+  width: 100%;
   height: 200px;
   border-radius: 1rem;
-  background: url(../img/mole.png) center;
-  background-size: cover;
-  animation: animate 700ms ease-in-out infinite; }
+  background-image: url(../img/mole.png);
+  background-size: cover; }
+
+.move {
+  transition: all 200ms ease;
+  animation: move 1200ms ease-in-out infinite; }
+
+.hit {
+  transition: bottom 200ms ease;
+  animation: hit 300ms ease-in-out forwards; }
+
+@keyframes move {
+  0% {
+    bottom: -400px; }
+  50% {
+    bottom: 0px; }
+  70% {
+    bottom: 0px; }
+  100% {
+    bottom: -400px; } }
+@keyframes hit {
+  0% {
+    bottom: 0; }
+  100% {
+    bottom: -400px; } }
 
 /*# sourceMappingURL=main.css.map */
