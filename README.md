@@ -6,7 +6,7 @@ is an arcade game in which players use a mallet to hit toy moles, which appear a
   * Use JavaScript/jQuery to handle DOM manipulation
   * [Use Trello to keep track of project](https://trello.com/b/MiV5R9wD/whac-a-mole)
   * Publish source code to GitHub with README.md file
-  * Deploy it!
+  * [Deploy it!](https://johndupper.github.io/mole/)
   
 ## Requirements
 1. Render a game in the browser
@@ -15,5 +15,9 @@ is an arcade game in which players use a mallet to hit toy moles, which appear a
 4. Create game logic to determine and announce winner
 5. Separate HTML, CSS, and JS files
 6. Wite quality code
-7. Deploy game
+7. [Deploy game](https://johndupper.github.io/mole/)
 8. Use appropriate semantic markup for HTML & CSS
+
+## Mid-MVC Wireframing...
+model... controller... both?: 
+![alt text]('https://github.com/johndupper/mole/blob/development/img/mockup.png')
