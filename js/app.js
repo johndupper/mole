@@ -6,16 +6,11 @@ let controller = {
     gamePlay: null,
     gameInProgress: false,
 
-    // start game
     onPlayButtonPressed: function() {
         if (controller.gameInProgress) {
-            console.log('play - gameInProgress: ' + controller.gameInProgress);
+            // game in progress, do not start another
         } else {
-            console.log('--- starting new game ---');
-            // gameInProgress = true
             controller.gameInProgress = true;
-            console.log('play - gameInProgress: ' + controller.gameInProgress);
-            
             // start a game
             controller.gamePlay = setInterval(function() {
                 controller.animateGame(game.generateRandomMole());
@@ -24,75 +19,56 @@ let controller = {
             $('#userScore').text('0');
             $('#playBtn').text('Play Game');
             $('#userTime').text(controller.timeRemaining);
-            
             // start timer
             controller.startTimer();
         }
     },
 
-    // start timer
     startTimer: function() {
-        // call timer function, start countdown
         controller.timeInterval = setInterval(function() {
             controller.timer();
         }, 1000);
     },
 
-    // timer logic
     timer: function() {
-        
-        // subtract a second
         controller.timeRemaining -= 1;
         
-        // if time is up
-        if (controller.timeRemaining < 1) {
-            
+        if (controller.timeRemaining < 1) {    
             // gameInProgress = false
             controller.gameInProgress = false;
-            console.log('time up - gameInProgress: ' + controller.gameInProgress);
-            
             // stop game & timer
             clearInterval(controller.gamePlay);
             clearInterval(controller.timeInterval);
             
-            // call reset game
             controller.reset();
             return;
         }
         $('#userTime').text(controller.timeRemaining);
     },
 
-    // show or hide moles
     animateGame: function(mole) {
         $('.mole').removeClass('move');
         $('#' + mole).addClass('move');
     },
 
-    // score point
     onMoleClick: function() {
         if (event.target.classList.contains('move')) {
             let secondClickTime = event.timeStamp;
             let timeDiff = secondClickTime - controller.lastClickTime;
-            
             
             if (timeDiff < 400) {
                 console.log('blocked point');
             } else {
                 game.addPoint();
                 $('#userScore').text(game.currentPoints);
-                console.log('score: ' + game.currentPoints);
             }
-            
             secondClickTime = 0;
             controller.lastClickTime = event.timeStamp;
         }
     },
     
     reset: function() {
-        
-        // reset game
         game.resetGame();
-        
         // reset controller
         controller.lastClickTime = 0;
         controller.timeRemaining = 15;
@@ -101,7 +77,6 @@ let controller = {
         controller.gameInProgress = false;
         
         $('.mole').removeClass('move');
-        
         // change UI for end of game
         $('#userTime').text('Game over!');
         $('#playBtn').text('Play Again?');

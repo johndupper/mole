@@ -19,4 +19,4 @@ is an arcade game in which players use a mallet to hit toy moles, which appear a
 8. Use appropriate semantic markup for HTML & CSS
 
 ## Mid-MVC Wireframing... 
-![model... controller... both?:](http://imgur.com/a/6LN6e)
+[model... controller... both?:](http://imgur.com/a/6LN6e)
