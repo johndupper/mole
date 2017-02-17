@@ -1,0 +1,14 @@
+iframe#preview-source { 
+    width: 900px;
+    border: 10px solid #ddd;
+    margin: 20px;
+
+}
+
+div#body {
+    margin-top: 60px;
+    margin-bottom: 160px;
+}
+iframe {
+    border: none;
+}
