@@ -62,8 +62,7 @@ let controller = {
                 game.addPoint();
                 $('#userScore').text(game.currentPoints);
             }
-            
-            secondClickTime = 0;
+
             controller.lastClickTime = event.timeStamp;
         }
     },
